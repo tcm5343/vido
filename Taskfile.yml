@@ -1,0 +1,34 @@
+version: '3'
+
+# dotenv: ['.env', '{{.ENV}}/.env.', '{{.HOME}}/.env']
+
+tasks:
+  build:
+    cmds:
+      - go build -o ./bin/app ./cmd/yt-archive-status/main.go
+    sources:
+      - ./**/*.go
+      - ./**/*.mod
+      - ./**/*.sum
+      # - ./**/.env
+      - testing/**/*
+
+  run:
+    desc: run the program with a specific local input file based off config
+    deps: [build]
+    cmds:
+      - ./bin/app
+
+  test:
+    desc: run the unit tests
+    deps: [build]
+    cmds:
+      - go test -v ./...
+
+  lint:
+    desc: Runs golangci-lint
+    sources:
+      - './**/*.go'
+      - .golangci.yml
+    cmds:
+      - golangci-lint run
