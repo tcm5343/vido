@@ -1,5 +1,6 @@
 # vido
 [![Go Report Card](https://goreportcard.com/badge/github.com/tcm5343/vido)](https://goreportcard.com/report/github.com/tcm5343/vido)
+
 ## What?
 vido (video do) is a CLI tool, written in Go, to help manage YouTube videos downloaded using [yt-dlp](https://github.com/yt-dlp/yt-dlp)/youtube-dl/youtube-dlc. This project will be pedagogical in nature and attempt to follow these [guidelines](https://clig.dev/).
 
